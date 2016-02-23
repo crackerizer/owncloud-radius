@@ -15,7 +15,7 @@ class OC_User_RADIUS extends \OCA\user_external\Base {
 		$this->host = $host;
 		$this->realm = $realm;
 		$this->secret = $secret;
-		$backend = $backend_name.'://';
+		$backend = $this->backend_name.'://';
 		$backend .= $host;
 		$backend .= ($realm == ""?"":$realm."@");
 		parent::__construct($backend);
