@@ -9,13 +9,12 @@ class OC_User_RADIUS extends \OCA\user_external\Base {
 	private $host;
 	private $realm;
 	private $secret;
-	private static $backend_name = 'radius';
 
 	public function __construct($host, $realm, $secret) {
 		$this->host = $host;
 		$this->realm = $realm;
 		$this->secret = $secret;
-		$backend = $this->backend_name.'://';
+		$backend = 'radius://';
 		$backend .= $host;
 		$backend .= ($realm == ""?"":$realm."@");
 		parent::__construct($backend);
